@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Luna Reflex Grid</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="hud">
+        <div class="hud-left">
+          <h1>Luna Reflex Grid</h1>
+          <p class="sub">
+            Tap the awake Luna. Avoid the sleeping Luna. Speed ramps up for 60
+            seconds.
+          </p>
+        </div>
+        <div class="hud-right">
+          <div class="stat"><span>Time</span><strong id="time">60</strong></div>
+          <div class="stat"><span>Score</span><strong id="score">0</strong></div>
+          <div class="stat"><span>HP</span><strong id="hp">3</strong></div>
+        </div>
+      </section>
+
+      <section class="board" id="board" aria-live="polite">
+        <div class="overlay" id="overlay" aria-hidden="true">
+          <div class="overlay-card">
+            <h2 id="overlayTitle">Game Over</h2>
+            <p id="overlayMessage">Final score: 0</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button id="startBtn" class="primary">Start Game</button>
+        <button id="resetBtn" class="ghost">Reset</button>
+        <div class="status" id="status">Ready.</div>
+      </section>
+
+      <section class="note">
+        <p>
+          Configure which photos are sleeping in
+          <code>script.js</code> (see the <code>SLEEPING_IMAGES</code> array).
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
