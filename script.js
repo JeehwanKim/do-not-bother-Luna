@@ -1,4 +1,4 @@
-const BOARD_SIZE = 4;
+const BOARD_SIZE = 3;
 const TOTAL_TIME = 60;
 const MAX_HP = 5;
 const START_INTERVAL_MIN = 5000;
@@ -250,8 +250,11 @@ function handleTileClick(event) {
     score += 10;
     scoreEl.textContent = score.toString();
     tile.el.classList.add("hit", "correct", "flash");
-    window.setTimeout(() => tile.el.classList.remove("flash"), 260);
-    setTile(tile, "empty", null);
+    window.setTimeout(() => tile.el.classList.remove("flash"), 1000);
+    window.setTimeout(() => {
+      tile.el.classList.remove("correct");
+      setTile(tile, "empty", null);
+    }, 1000);
   } else if (tile.type === "sleeping") {
     hp -= 1;
     hpEl.textContent = hp.toString();
